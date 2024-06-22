@@ -2,6 +2,7 @@ using Apollo.Models;
 using RecrutementNet.DAL.Clients;
 using RecrutementNet.DAL.Contracts;
 using RecrutementNet.DAL.Generics;
+using RecrutementNet.Services.Clients;
 using RecrutementNet.Services.Contracts;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 builder.Services.AddScoped<IContractService, ContractService>();
+builder.Services.AddScoped<IClientService, ClientService>();
 
 builder.Services.AddScoped<IGenericDal<Contract>, ContractDal>();
 builder.Services.AddScoped<IGenericDal<Client>, ClientDal>();

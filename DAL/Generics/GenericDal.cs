@@ -1,6 +1,4 @@
-﻿using Apollo.Models;
-using RecrutementNet.Models;
-using System;
+﻿using RecrutementNet.Models;
 
 namespace RecrutementNet.DAL.Generics;
 
@@ -25,6 +23,8 @@ public class GenericDal<T> : IGenericDal<T> where T : Entity
 
     public Task Create(T entity)
     {
+        int maxId = _dbSet.Max(entity =>  entity.Id);
+        entity.Id = maxId + 1;
         _dbSet.Add(entity);
         return Task.CompletedTask;
     }

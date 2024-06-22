@@ -1,3 +1,4 @@
+using RecrutementNet.DTO;
 using RecrutementNet.Models;
 
 namespace Apollo.Models;
@@ -13,4 +14,6 @@ public class Client : Entity
         Name = name;
         Id = id;
     }
+
+    public ClientDTO ToDto() => new(Name, Address);
 }

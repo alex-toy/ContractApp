@@ -32,7 +32,7 @@ public class ContractController : ControllerBase
 
     [HttpGet("GetContractsByClientId")]
     public IEnumerable<Contract> GetContractsByClientId([FromQuery] int id) {
-        return this._contractService.GetContractsByClientId(id);
+        return _contractService.GetContractsByClientId(id);
     }
 
     [HttpDelete()]

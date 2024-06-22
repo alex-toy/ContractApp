@@ -15,5 +15,5 @@ public class Client : Entity
         Id = id;
     }
 
-    public ClientDTO ToDto() => new(Name, Address);
+    public ClientDTO ToDto() => new(Id, Name, Address);
 }

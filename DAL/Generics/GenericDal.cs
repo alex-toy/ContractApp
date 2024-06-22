@@ -29,16 +29,23 @@ public class GenericDal<T> : IGenericDal<T> where T : Entity
         return Task.CompletedTask;
     }
 
-    public Task Update(int entityId, T entity)
+    public Task Update(T entity)
     {
-        T? entityToUpdate = Get(contract => contract.Id == entityId);
-        if (entityToUpdate is not null) entityToUpdate = entity;
+        T? entityToUpdate = Get(e => e.Id == entity.Id);
+        if (entityToUpdate is not null)
+        {
+            _dbSet.Remove(entityToUpdate);
+            _dbSet.Add(entity);
+        }
+            
         return Task.CompletedTask;
     }
 
     public Task Delete(Func<T, bool> predicate)
     {
-        _dbSet = _dbSet.Where(predicate).ToList();
+        T? entityToRemove = Get(predicate);
+        if (entityToRemove is not null) _dbSet.Remove(entityToRemove);
+
         return Task.CompletedTask;
     }
 }

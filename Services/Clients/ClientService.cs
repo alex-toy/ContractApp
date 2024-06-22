@@ -17,6 +17,6 @@ public class ClientService : IClientService
     {
         IEnumerable<Client> clients = _clientDAL.GetAll();
 
-        return clients.Select(contract => contract.ToDto());
+        return clients.Select(client => client.ToDto());
     }
 }

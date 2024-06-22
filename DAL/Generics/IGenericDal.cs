@@ -8,6 +8,6 @@ namespace RecrutementNet.DAL.Generics
         IEnumerable<T> GetAll(Func<T, bool>? predicate = null);
         Task Delete(Func<T, bool> predicate);
         Task Create(T entity);
-        Task Update(int entityId, T entity);
+        Task Update(T entity);
     }
 }

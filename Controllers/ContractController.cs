@@ -1,7 +1,7 @@
 using Apollo.DTO;
 using Apollo.Models;
-using Apollo.Services;
 using Microsoft.AspNetCore.Mvc;
+using RecrutementNet.Services.Contracts;
 
 namespace RecrutementNet.Controllers;
 
@@ -19,10 +19,16 @@ public class ContractController : ControllerBase
         _contractService = service;
     }
 
-    [HttpGet("GetContracts")]
-    public IEnumerable<ContractDTO> GetContracts([FromQuery] int userId)
+    [HttpGet("GetAllContracts")]
+    public IEnumerable<ContractDTO> GetAllContracts()
     {
-        return _contractService.GetContracts(userId);
+        return _contractService.GetAllContracts();
+    }
+
+    [HttpGet("GetContractsByUserId")]
+    public IEnumerable<ContractDTO> GetContractsByUserId([FromQuery] int userId)
+    {
+        return _contractService.GetContractsByUserId(userId);
     }
 
     [HttpGet("GetContractsBeforeDate")]
@@ -31,13 +37,33 @@ public class ContractController : ControllerBase
     }
 
     [HttpGet("GetContractsByClientId")]
-    public IEnumerable<Contract> GetContractsByClientId([FromQuery] int id) {
+    public IEnumerable<Contract> GetContractsByClientId([FromQuery] int id)
+    {
         return _contractService.GetContractsByClientId(id);
     }
 
-    [HttpDelete()]
-    public async void DeleteAsync([FromQuery] string contractId)
+    [HttpPost("CreateContract")]
+    public Task CreateContract([FromBody] Contract contract)
     {
-        await _contractService.DeleteAsync(contractId);
+        return _contractService.CreateContract(contract);
+    }
+
+    [HttpPost("UpdateContract")]
+    public Task UpdateContract([FromBody] Contract contract)
+    {
+        return _contractService.UpdateContract(contract);
+    }
+
+    [HttpDelete("DeleteByContractIdAsync")]
+    public async Task DeleteByContractIdAsync([FromQuery] int contractId)
+    {
+        try
+        {
+            await _contractService.DeleteByContractId(contractId);
+        }
+        catch (Exception ex)
+        {
+            _logger.LogDebug(ex.Message);
+        }
     }
 }

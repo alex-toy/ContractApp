@@ -1,7 +1,9 @@
+using RecrutementNet.Models;
+
 namespace Apollo.Models;
 
-public class Client {
-    public int Id { get; set; }
+public class Client : Entity
+{
     public string Name { get; set; }
     public string Address { get; set; }
 

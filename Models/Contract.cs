@@ -1,10 +1,11 @@
 using Apollo.DTO;
+using RecrutementNet.Models;
 
 namespace Apollo.Models;
 
-public class Contract {
+public class Contract : Entity
+{
     public DateOnly Date { get; set; }
-    public int Id { get; set; }
     public int ClientId { get; set; }
     public int UserId { get; set; }
 
@@ -16,11 +17,9 @@ public class Contract {
         ClientId = clientId;
     }
 
-    public ContractDTO ToContractDto(IEnumerable<Client> clients)
+    public ContractDTO ToDto(string? clientName)
     {
-        Client? client = clients.FirstOrDefault(cl => cl.Id == ClientId);
-        string clientName = client is not null ? client.Name : string.Empty;
-        ContractDTO contractDto = new (Id, Date, clientName);
+        ContractDTO contractDto = new (Id, Date, clientName ?? string.Empty);
         return contractDto;
     }
 }

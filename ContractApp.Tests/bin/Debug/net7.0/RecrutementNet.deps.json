@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v7.0": {
       "RecrutementNet/1.0.0": {
         "dependencies": {
+          "ContractApp.Shared": "1.0.0",
           "Microsoft.AspNetCore.OpenApi": "7.0.9",
           "Swashbuckle.AspNetCore": "6.5.0",
           "NFluent": "3.0.1.352",
@@ -805,6 +806,11 @@
             "fileVersion": "2.4.2.0"
           }
         }
+      },
+      "ContractApp.Shared/1.0.0": {
+        "runtime": {
+          "ContractApp.Shared.dll": {}
+        }
       }
     }
   },
@@ -1429,6 +1435,11 @@
       "sha512": "sha512-CZmgcKkwpyo8FlupZdWpJCryrAOWLh1FBPG6gmVZuPQkGQsim/oL4PcP4nfrC2hHgXUFtluvaJ0Sp9PQKUMNpg==",
       "path": "xunit.extensibility.execution/2.4.2",
       "hashPath": "xunit.extensibility.execution.2.4.2.nupkg.sha512"
+    },
+    "ContractApp.Shared/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

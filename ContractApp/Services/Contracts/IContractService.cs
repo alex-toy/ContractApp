@@ -7,8 +7,8 @@ namespace RecrutementNet.Services.Contracts
     {
         IEnumerable<ContractDTO> GetAllContracts();
         IEnumerable<ContractDTO> GetContractsByUserId(int userId);
-        IEnumerable<Contract> GetContractsBeforeDate(DateOnly date);
-        IEnumerable<Contract> GetContractsByClientId(int id);
+        IEnumerable<ContractDTO> GetContractsBeforeDate(DateOnly date);
+        IEnumerable<ContractDTO> GetContractsByClientId(int id);
         Task<int> CreateContract(ContractUpsertDTO contract);
         Task UpdateContract(ContractUpsertDTO contract);
         Task DeleteByContractId(int contractId);

@@ -113,3 +113,6 @@ C:\source\RecrutementDotNet\ContractApp.Tests\obj\Debug\net7.0\refint\ContractAp
 C:\source\RecrutementDotNet\ContractApp.Tests\obj\Debug\net7.0\ContractApp.Tests.pdb
 C:\source\RecrutementDotNet\ContractApp.Tests\obj\Debug\net7.0\ContractApp.Tests.genruntimeconfig.cache
 C:\source\RecrutementDotNet\ContractApp.Tests\obj\Debug\net7.0\ref\ContractApp.Tests.dll
+C:\source\RecrutementDotNet\ContractApp.Tests\bin\Debug\net7.0\ContractApp.Shared.dll
+C:\source\RecrutementDotNet\ContractApp.Tests\bin\Debug\net7.0\ContractApp.Shared.pdb
+C:\source\RecrutementDotNet\ContractApp.Tests\obj\Debug\net7.0\ContractApp.Tests.sourcelink.json

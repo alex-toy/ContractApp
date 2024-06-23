@@ -1,5 +1,5 @@
 using Apollo.Models;
-using RecrutementNet.DAL.Generics;
+using ContractApp.Shared.Generics;
 using RecrutementNet.DTO.Contracts;
 
 namespace RecrutementNet.Services.Contracts;
@@ -17,30 +17,31 @@ public class ContractService : IContractService
 
     public IEnumerable<ContractDTO> GetAllContracts()
     {
-        IEnumerable<Contract> contracts = _contractDAL.GetAll();
-        IEnumerable<int> contractClientIds = contracts.Select(contract => contract.ClientId);
-        IEnumerable<Client> clients = _clientDAL.GetAll(client => contractClientIds.Contains(client.Id));
-
-        return contracts.Select(contract => contract.ToDto(GetClientName(contract, clients)));
+        return GetContracts();
     }
 
     public IEnumerable<ContractDTO> GetContractsByUserId(int userId)
     {
-        IEnumerable<Contract> contracts = _contractDAL.GetAll(contract => contract.UserId == userId);
+        return GetContracts(contract => contract.UserId == userId);
+    }
+
+    public IEnumerable<ContractDTO> GetContractsByClientId(int id)
+    {
+        return GetContracts(contract => contract.ClientId == id);
+    }
+
+    public IEnumerable<ContractDTO> GetContractsBeforeDate(DateOnly date)
+    {
+        return GetContracts(contract => contract.Date >= date);
+    }
+
+    private IEnumerable<ContractDTO> GetContracts(Func<Contract, bool>? predicate = null)
+    {
+        IEnumerable<Contract> contracts = _contractDAL.GetAll(predicate);
         IEnumerable<int> contractClientIds = contracts.Select(contract => contract.ClientId);
         IEnumerable<Client> clients = _clientDAL.GetAll(client => contractClientIds.Contains(client.Id));
 
         return contracts.Select(contract => contract.ToDto(GetClientName(contract, clients)));
-    }
-
-    public IEnumerable<Contract> GetContractsByClientId(int id)
-    {
-        return _contractDAL.GetAll(contract => contract.ClientId == id);
-    }
-
-    public IEnumerable<Contract> GetContractsBeforeDate(DateOnly date)
-    {
-        return _contractDAL.GetAll(contract => contract.Date >= date);
     }
 
     public Task<int> CreateContract(ContractUpsertDTO contract)

@@ -1,7 +1,7 @@
 using Apollo.Models;
+using ContractApp.Shared.Generics;
 using RecrutementNet.DAL.Clients;
 using RecrutementNet.DAL.Contracts;
-using RecrutementNet.DAL.Generics;
 using RecrutementNet.Services.Clients;
 using RecrutementNet.Services.Contracts;
 

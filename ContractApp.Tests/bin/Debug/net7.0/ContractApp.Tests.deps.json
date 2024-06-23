@@ -1087,8 +1087,14 @@
         }
       },
       "xunit.runner.visualstudio/2.4.5": {},
+      "ContractApp.Shared/1.0.0": {
+        "runtime": {
+          "ContractApp.Shared.dll": {}
+        }
+      },
       "RecrutementNet/1.0.0": {
         "dependencies": {
+          "ContractApp.Shared": "1.0.0",
           "Microsoft.AspNetCore.OpenApi": "7.0.9",
           "Swashbuckle.AspNetCore": "6.5.0",
           "NFluent": "3.0.1.352",
@@ -1784,6 +1790,11 @@
       "sha512": "sha512-OwHamvBdUKgqsXfBzWiCW/O98BTx81UKzx2bieIOQI7CZFE5NEQZGi8PBQGIKawDW96xeRffiNf20SjfC0x9hw==",
       "path": "xunit.runner.visualstudio/2.4.5",
       "hashPath": "xunit.runner.visualstudio.2.4.5.nupkg.sha512"
+    },
+    "ContractApp.Shared/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "RecrutementNet/1.0.0": {
       "type": "project",

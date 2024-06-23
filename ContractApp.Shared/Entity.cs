@@ -1,4 +1,4 @@
-﻿namespace RecrutementNet.Models;
+﻿namespace ContractApp.Shared;
 
 public class Entity
 {

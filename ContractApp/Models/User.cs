@@ -1,9 +1,9 @@
+using ContractApp.Shared;
+
 namespace Apollo.Models;
 
-public class User {
-    public int Id { get; set; }
-
-
+public class User : Entity
+{
     public string Name { get; set; }
     public string surname { get; set; }
     public DateOnly BirthDate { get; set; }

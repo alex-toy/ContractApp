@@ -1,4 +1,3 @@
-using Apollo.Models;
 using Microsoft.AspNetCore.Mvc;
 using RecrutementNet.DTO.Contracts;
 using RecrutementNet.Services.Contracts;

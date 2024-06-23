@@ -1,6 +1,6 @@
 ﻿using RecrutementNet.Exceptions.Clients;
 
-namespace RecrutementNet.ValueObjects;
+namespace RecrutementNet.ValueObjects.Clients;
 
 public class ClientName
 {

@@ -1,6 +1,5 @@
 using ContractApp.Shared;
 using RecrutementNet.DTO.Clients;
-using RecrutementNet.ValueObjects;
 
 namespace Apollo.Models;
 
@@ -11,9 +10,9 @@ public class Client : Entity
 
     public Client(int id, string name, string address)
     {
-        Address = address;
-        Name = name;
         Id = id;
+        Name = name;
+        Address = address;
     }
 
     public ClientDTO ToDto() => new(Id, Name, Address);

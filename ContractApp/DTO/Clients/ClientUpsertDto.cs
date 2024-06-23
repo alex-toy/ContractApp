@@ -1,5 +1,5 @@
 ﻿using Apollo.Models;
-using RecrutementNet.ValueObjects;
+using RecrutementNet.ValueObjects.Clients;
 
 namespace RecrutementNet.DTO.Clients;
 
@@ -11,6 +11,6 @@ public class ClientUpsertDto
 
     public Client ToModel()
     {
-        return new Client(Id, new ClientName(Name), Address);
+        return new Client(Id, new ClientName(Name), new ClientAddress(Address));
     }
 }

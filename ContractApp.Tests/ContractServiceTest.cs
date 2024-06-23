@@ -1,4 +1,4 @@
-﻿using Apollo.DTO;
+﻿using RecrutementNet.DTO.Contracts;
 using RecrutementNet.Services.Contracts;
 
 namespace ContractApp.Tests;

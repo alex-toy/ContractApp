@@ -1,7 +1,6 @@
-using Apollo.DTO;
 using Apollo.Models;
 using RecrutementNet.DAL.Generics;
-using RecrutementNet.DTO;
+using RecrutementNet.DTO.Contracts;
 
 namespace RecrutementNet.Services.Contracts;
 
@@ -44,7 +43,7 @@ public class ContractService : IContractService
         return _contractDAL.GetAll(contract => contract.Date >= date);
     }
 
-    public Task CreateContract(ContractUpsertDTO contract)
+    public Task<int> CreateContract(ContractUpsertDTO contract)
     {
         return _contractDAL.Create(contract.ToModel());
     }

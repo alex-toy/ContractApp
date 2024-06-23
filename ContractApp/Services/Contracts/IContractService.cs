@@ -1,6 +1,5 @@
-﻿using Apollo.DTO;
-using Apollo.Models;
-using RecrutementNet.DTO;
+﻿using Apollo.Models;
+using RecrutementNet.DTO.Contracts;
 
 namespace RecrutementNet.Services.Contracts
 {
@@ -10,7 +9,7 @@ namespace RecrutementNet.Services.Contracts
         IEnumerable<ContractDTO> GetContractsByUserId(int userId);
         IEnumerable<Contract> GetContractsBeforeDate(DateOnly date);
         IEnumerable<Contract> GetContractsByClientId(int id);
-        Task CreateContract(ContractUpsertDTO contract);
+        Task<int> CreateContract(ContractUpsertDTO contract);
         Task UpdateContract(ContractUpsertDTO contract);
         Task DeleteByContractId(int contractId);
     }

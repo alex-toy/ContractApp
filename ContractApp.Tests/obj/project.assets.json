@@ -1826,10 +1826,21 @@
           "build/netcoreapp3.1/xunit.runner.visualstudio.props": {}
         }
       },
+      "ContractApp.Shared/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/ContractApp.Shared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ContractApp.Shared.dll": {}
+        }
+      },
       "RecrutementNet/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
+          "ContractApp.Shared": "1.0.0",
           "Microsoft.AspNetCore.OpenApi": "7.0.9",
           "Swashbuckle.AspNetCore": "6.5.0",
           "nfluent": "3.0.1.352",
@@ -6007,6 +6018,11 @@
         "xunit.runner.visualstudio.2.4.5.nupkg.sha512",
         "xunit.runner.visualstudio.nuspec"
       ]
+    },
+    "ContractApp.Shared/1.0.0": {
+      "type": "project",
+      "path": "../ContractApp.Shared/ContractApp.Shared.csproj",
+      "msbuildProject": "../ContractApp.Shared/ContractApp.Shared.csproj"
     },
     "RecrutementNet/1.0.0": {
       "type": "project",

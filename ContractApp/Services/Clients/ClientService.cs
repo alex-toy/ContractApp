@@ -1,6 +1,6 @@
 ﻿using Apollo.Models;
 using RecrutementNet.DAL.Generics;
-using RecrutementNet.DTO;
+using RecrutementNet.DTO.Clients;
 
 namespace RecrutementNet.Services.Clients;
 
@@ -18,5 +18,10 @@ public class ClientService : IClientService
         IEnumerable<Client> clients = _clientDAL.GetAll();
 
         return clients.Select(client => client.ToDto());
+    }
+
+    public Task<int> CreateClient(ClientUpsertDto client)
+    {
+        return _clientDAL.Create(client.ToModel());
     }
 }

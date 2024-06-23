@@ -1,7 +1,6 @@
-using Apollo.DTO;
 using Apollo.Models;
 using Microsoft.AspNetCore.Mvc;
-using RecrutementNet.DTO;
+using RecrutementNet.DTO.Contracts;
 using RecrutementNet.Services.Contracts;
 
 namespace RecrutementNet.Controllers;
@@ -44,9 +43,9 @@ public class ContractController : ControllerBase
     }
 
     [HttpPost("CreateContract")]
-    public Task CreateContract([FromBody] ContractUpsertDTO contract)
+    public async Task<ActionResult<int>> CreateContractAsync([FromBody] ContractUpsertDTO contract)
     {
-        return _contractService.CreateContract(contract);
+        return await _contractService.CreateContract(contract);
     }
 
     [HttpPost("UpdateContract")]

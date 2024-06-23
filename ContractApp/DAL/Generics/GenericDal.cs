@@ -21,12 +21,12 @@ public class GenericDal<T> : IGenericDal<T> where T : Entity
         return predicate is not null ? _dbSet.Where(predicate) : _dbSet;
     }
 
-    public Task Create(T entity)
+    public Task<int> Create(T entity)
     {
         int maxId = _dbSet.Max(entity =>  entity.Id);
         entity.Id = maxId + 1;
         _dbSet.Add(entity);
-        return Task.CompletedTask;
+        return Task.FromResult(entity.Id);
     }
 
     public Task Update(T entity)

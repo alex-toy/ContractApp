@@ -1,4 +1,4 @@
-﻿namespace RecrutementNet.DTO;
+﻿namespace RecrutementNet.DTO.Clients;
 
 public class ClientDTO
 {

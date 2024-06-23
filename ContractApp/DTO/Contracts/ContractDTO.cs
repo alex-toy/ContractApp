@@ -1,6 +1,7 @@
-namespace Apollo.DTO;
+namespace RecrutementNet.DTO.Contracts;
 
-public class ContractDTO {
+public class ContractDTO
+{
     public ContractDTO(int id, DateOnly date, string clientName)
     {
         Id = id;

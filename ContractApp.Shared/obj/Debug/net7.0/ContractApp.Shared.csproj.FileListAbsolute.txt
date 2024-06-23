@@ -1,0 +1,12 @@
+C:\source\RecrutementDotNet\ContractApp.Shared\bin\Debug\net7.0\ContractApp.Shared.deps.json
+C:\source\RecrutementDotNet\ContractApp.Shared\bin\Debug\net7.0\ContractApp.Shared.dll
+C:\source\RecrutementDotNet\ContractApp.Shared\bin\Debug\net7.0\ContractApp.Shared.pdb
+C:\source\RecrutementDotNet\ContractApp.Shared\obj\Debug\net7.0\ContractApp.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\source\RecrutementDotNet\ContractApp.Shared\obj\Debug\net7.0\ContractApp.Shared.AssemblyInfoInputs.cache
+C:\source\RecrutementDotNet\ContractApp.Shared\obj\Debug\net7.0\ContractApp.Shared.AssemblyInfo.cs
+C:\source\RecrutementDotNet\ContractApp.Shared\obj\Debug\net7.0\ContractApp.Shared.csproj.CoreCompileInputs.cache
+C:\source\RecrutementDotNet\ContractApp.Shared\obj\Debug\net7.0\ContractApp.Shared.sourcelink.json
+C:\source\RecrutementDotNet\ContractApp.Shared\obj\Debug\net7.0\ContractApp.Shared.dll
+C:\source\RecrutementDotNet\ContractApp.Shared\obj\Debug\net7.0\refint\ContractApp.Shared.dll
+C:\source\RecrutementDotNet\ContractApp.Shared\obj\Debug\net7.0\ContractApp.Shared.pdb
+C:\source\RecrutementDotNet\ContractApp.Shared\obj\Debug\net7.0\ref\ContractApp.Shared.dll

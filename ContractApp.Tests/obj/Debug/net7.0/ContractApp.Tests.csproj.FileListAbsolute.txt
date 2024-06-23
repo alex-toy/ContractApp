@@ -4,8 +4,6 @@ C:\source\RecrutementDotNet\ContractApp.Tests\bin\Debug\net7.0\RecrutementNet.de
 C:\source\RecrutementDotNet\ContractApp.Tests\bin\Debug\net7.0\RecrutementNet.runtimeconfig.json
 C:\source\RecrutementDotNet\ContractApp.Tests\bin\Debug\net7.0\appsettings.Development.json
 C:\source\RecrutementDotNet\ContractApp.Tests\bin\Debug\net7.0\appsettings.json
-C:\source\RecrutementDotNet\ContractApp.Tests\bin\Debug\net7.0\ContractApp.Tests\obj\ContractApp.Tests.csproj.nuget.dgspec.json
-C:\source\RecrutementDotNet\ContractApp.Tests\bin\Debug\net7.0\ContractApp.Tests\obj\project.assets.json
 C:\source\RecrutementDotNet\ContractApp.Tests\bin\Debug\net7.0\RecrutementNet.exe
 C:\source\RecrutementDotNet\ContractApp.Tests\bin\Debug\net7.0\testhost.exe
 C:\source\RecrutementDotNet\ContractApp.Tests\bin\Debug\net7.0\xunit.runner.visualstudio.dotnetcore.testadapter.dll
@@ -116,3 +114,5 @@ C:\source\RecrutementDotNet\ContractApp.Tests\obj\Debug\net7.0\ref\ContractApp.T
 C:\source\RecrutementDotNet\ContractApp.Tests\bin\Debug\net7.0\ContractApp.Shared.dll
 C:\source\RecrutementDotNet\ContractApp.Tests\bin\Debug\net7.0\ContractApp.Shared.pdb
 C:\source\RecrutementDotNet\ContractApp.Tests\obj\Debug\net7.0\ContractApp.Tests.sourcelink.json
+C:\source\RecrutementDotNet\ContractApp.Tests\bin\Debug\net7.0\Castle.Core.dll
+C:\source\RecrutementDotNet\ContractApp.Tests\bin\Debug\net7.0\Moq.dll

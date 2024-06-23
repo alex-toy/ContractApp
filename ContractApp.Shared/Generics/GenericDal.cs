@@ -14,7 +14,7 @@ public class GenericDal<T> : IGenericDal<T> where T : Entity
         return _dbSet.FirstOrDefault(predicate);
     }
 
-    public IEnumerable<T> GetAll(Func<T, bool>? predicate = null)
+    public virtual IEnumerable<T> GetAll(Func<T, bool>? predicate = null)
     {
         return predicate is not null ? _dbSet.Where(predicate) : _dbSet;
     }

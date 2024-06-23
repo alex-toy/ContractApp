@@ -1,5 +1,5 @@
+using ContractApp.Shared;
 using RecrutementNet.DTO.Contracts;
-using RecrutementNet.Models;
 
 namespace Apollo.Models;
 

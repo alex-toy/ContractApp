@@ -1,6 +1,6 @@
 ﻿using Apollo.Data;
 using Apollo.Models;
-using RecrutementNet.DAL.Generics;
+using ContractApp.Shared.Generics;
 
 namespace RecrutementNet.DAL.Clients;
 

@@ -9,7 +9,7 @@ public class ClientName
     private int _minimalLength = 3;
     private int _maximalLength = 10;
 
-    public ClientName(string value)
+    public ClientName(string? value)
     {
         if (string.IsNullOrWhiteSpace(value)) throw new EmptyClientNameException();
         if (value.Length < _minimalLength) throw new TooShortClientNameException(_minimalLength);

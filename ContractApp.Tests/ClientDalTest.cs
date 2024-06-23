@@ -1,15 +1,20 @@
 using Apollo.Models;
 using RecrutementNet.DAL.Clients;
+using RecrutementNet.DTO.Clients;
+using RecrutementNet.Exceptions.Clients;
+using RecrutementNet.Services.Clients;
 
 namespace ContractApp.Tests;
 
 public class ClientDalTest : IClassFixture<ClientDal>
 {
     private readonly ClientDal _clientDAL;
+    private readonly ClientService _clientService;
 
-    public ClientDalTest(ClientDal contractService)
+    public ClientDalTest(ClientDal clientDal)
     {
-        _clientDAL = contractService;
+        _clientDAL = clientDal;
+        _clientService = new ClientService(_clientDAL);
     }
 
     [Fact]
@@ -43,6 +48,22 @@ public class ClientDalTest : IClassFixture<ClientDal>
         IEnumerable<Client> clients = _clientDAL.GetAll();
         int clientIdsCount = clients.Select(c => c.Id).Count();
         int clientIdsDistinctCount = clients.Select(c => c.Id).Distinct().Count();
-        Assert.True(clientIdsCount == clientIdsDistinctCount, "All ids in the database are different");
+        Assert.True(clientIdsCount == clientIdsDistinctCount, "Some ids in the database are equal");
+    }
+
+    [Fact]
+    public async Task Exception_is_thrown_when_client_name_is_too_short()
+    {
+        ClientUpsertDto client = new ClientUpsertDto() { Id = 0, Name = "a", Address = "paris" };
+
+        await Assert.ThrowsAsync<TooShortClientNameException>(() => _clientService.CreateClient(client));
+    }
+
+    [Fact]
+    public async Task Exception_is_thrown_when_client_name_is_too_long()
+    {
+        ClientUpsertDto client = new ClientUpsertDto() { Id = 0, Name = "too long client name", Address = "paris" };
+
+        await Assert.ThrowsAsync<TooLongClientNameException>(() => _clientService.CreateClient(client));
     }
 }

@@ -1,6 +1,4 @@
-﻿using RecrutementNet.Models;
-
-namespace RecrutementNet.DAL.Generics;
+﻿namespace ContractApp.Shared.Generics;
 
 public class GenericDal<T> : IGenericDal<T> where T : Entity
 {
@@ -23,7 +21,7 @@ public class GenericDal<T> : IGenericDal<T> where T : Entity
 
     public Task<int> Create(T entity)
     {
-        int maxId = _dbSet.Max(entity =>  entity.Id);
+        int maxId = _dbSet.Max(entity => entity.Id);
         entity.Id = maxId + 1;
         _dbSet.Add(entity);
         return Task.FromResult(entity.Id);
@@ -37,7 +35,7 @@ public class GenericDal<T> : IGenericDal<T> where T : Entity
             _dbSet.Remove(entityToUpdate);
             _dbSet.Add(entity);
         }
-            
+
         return Task.CompletedTask;
     }
 

@@ -1,5 +1,5 @@
 ﻿using Apollo.Models;
-using RecrutementNet.DAL.Generics;
+using ContractApp.Shared.Generics;
 using RecrutementNet.DTO.Clients;
 
 namespace RecrutementNet.Services.Clients;

@@ -32,12 +32,12 @@ public class ContractController : ControllerBase
     }
 
     [HttpGet("GetContractsBeforeDate")]
-    public IEnumerable<Contract> GetContractsBeforeDate([FromQuery] DateOnly date) {
+    public IEnumerable<ContractDTO> GetContractsBeforeDate([FromQuery] DateOnly date) {
         return _contractService.GetContractsBeforeDate(date);
     }
 
     [HttpGet("GetContractsByClientId")]
-    public IEnumerable<Contract> GetContractsByClientId([FromQuery] int id)
+    public IEnumerable<ContractDTO> GetContractsByClientId([FromQuery] int id)
     {
         return _contractService.GetContractsByClientId(id);
     }

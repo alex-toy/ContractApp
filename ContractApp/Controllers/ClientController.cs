@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using RecrutementNet.DTO.Clients;
-using RecrutementNet.DTO.Contracts;
 using RecrutementNet.Services.Clients;
 
 namespace RecrutementNet.Controllers;

@@ -1,15 +1,15 @@
+using ContractApp.Shared;
 using RecrutementNet.DTO.Clients;
-using RecrutementNet.Models;
 using RecrutementNet.ValueObjects;
 
 namespace Apollo.Models;
 
 public class Client : Entity
 {
-    public ClientName Name { get; set; }
+    public string Name { get; set; }
     public string Address { get; set; }
 
-    public Client(int id, ClientName name, string address)
+    public Client(int id, string name, string address)
     {
         Address = address;
         Name = name;
